@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <%= render 'shared/page_title', title: @recipe.name %>
+
+      <h3>How to do it</h3>
+      <p><%= simple_format(@recipe.description) %></p>
+      <div class="created-by">
+        <p><%= link_to gravatar_for(@recipe.chef, size: 50), recipes_path %></p>
+        <p>Shared by <%= @recipe.chef.chefname %> <%=time_ago_in_words(@recipe.updated_at) %> ago</p>
+      </div>
+    </div>
+  </div>
+</div>

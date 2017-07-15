@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>ChefBook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,13 @@
   </head>
 
   <body>
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/messages' %>
     <%= yield %>
+    <footer>
+      <hr>
+      <p>Created by Regina.H, following Mashrur Hossain's Professional Ruby on Rails Course</p>
+      <p>&copy; 2017 ReginaStudio</p>
+    </footer>
   </body>
 </html>

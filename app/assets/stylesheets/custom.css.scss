@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+$font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
+$font-size-base: 16px;
+$headings-font-weight: 600;
+$navbar-border-radius: 0;
+$navbar-margin-bottom: 0;
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+footer {
+	padding: 1em;
+	text-align: center;
+	p {
+		font-size: 0.8em;
+		color: #757271;
+	}
+}
+
+#bg-home-page {
+	background-image: asset-url('home-page-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 600px;
+	background-position: center;
+}
+
+#tagline {
+	padding: 1.5em;
+	position: relative;
+	top: 20%;
+	h1, p {
+		color: #fff;
+		text-shadow: 2px 2px 5px #000;
+	}
+}
+
+.page-title-div {
+	margin-bottom: 2em;
+	border-bottom: .5px solid rgba(119,136,153,.3);
+}
+
+.created-by {
+	color: #778899;
+	border-top: .5px solid rgba(119,136,153,.3);
+	margin-top: 2em;
+	text-align: right;
+	padding-top: .5em;
+	font-size: .75em;
+}
+
+.center {
+	text-align: center;
+}
+
+.flash-msg {
+	margin-top: 2em;
+}
