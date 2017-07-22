@@ -1,0 +1,17 @@
+<div class="container">
+  <%= render 'shared/page_title', title: "#{@chef.chefname}'s page" %>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-2">
+      <%= gravatar_for @chef, size: 100 %>
+    </div>
+    <div class="col-md-6">
+      <% @chef.recipes.each do |recipe| %>
+        <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
+        <p><%= truncate(recipe.description, length: 50) %></p>
+        <div class="created-by">
+          <p>Created <%= time_ago_in_words(recipe.updated_at) %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

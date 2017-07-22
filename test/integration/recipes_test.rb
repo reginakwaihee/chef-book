@@ -3,7 +3,7 @@ require 'test_helper'
 class RecipesTest < ActionDispatch::IntegrationTest
 
   def setup
-    @chef = Chef.create!(chefname: "joe", email: "joe@example.com")
+    @chef = Chef.create!(chefname: "joe", email: "joe@example.com", password: "password", password_confirmation: "password")
     @recipe1 = @chef.recipes.create(name: "Fish", description: "Steam fish")
     @recipe2 = @chef.recipes.build(name: "Sausage", description: "Baked honey sausages")
     @recipe2.save
@@ -29,6 +29,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_match @chef.chefname, response.body
     assert_select 'a[href=?]', edit_recipe_path(@recipe1), text: "Edit this recipe"
     assert_select 'a[href=?]', recipe_path(@recipe1), text: "Delete this recipe"
+    assert_select 'a[href=?]', recipes_path, text: "Return to All recipes"
   end
 
   test "create new valid recipe" do

@@ -1,54 +1,5 @@
 <div class="container">
   <%= render 'shared/page_title', title: "Create a new recipe" %>
+  <%= render 'form' %>
 
-  <% if @recipe.errors.any? %>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <h2 class="panel-title"><%= pluralize(@recipe.errors.count, "error") %> prohibited this <%= @recipe.class %> from being saved:</h2>
-        </div>
-        <div class="panel-body">
-          <ul>
-            <% @recipe.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <% end %>
-
-  <div class="row">
-    <div class="col-md-12">
-      <%= form_for(@recipe, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-        <div class="form-group">
-          <div class="col-md-2 control-label">
-            <%= f.label :name %>
-          </div>
-          <div class="col-md-8">
-            <%= f.text_field :name, class: "form-control", placeholder: "Recipe name", autofocus: true %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-md-2 control-label">
-            <%= f.label :description %>
-          </div>
-          <div class="col-md-8">
-            <%= f.text_area :description, class: "form-control", rows: 20, placeholder: "Describe the steps here" %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-md-offset-2 col-md-8">
-            <%= f.submit "Create", class: "btn btn-default" %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="col-md-offset-2">
-    <p><small><%= link_to "Cancel and return to view all recipes", recipes_path %></small></p>
-  </div>
 </div>
